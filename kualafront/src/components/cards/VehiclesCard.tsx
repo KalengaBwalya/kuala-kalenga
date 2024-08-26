@@ -7,7 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import DefaultAppButton from "../buttons/default";
+import DefaultAppButton from "../buttons/DefaultAppButton";
 
 interface VehiclesCardProps {
   title: string;

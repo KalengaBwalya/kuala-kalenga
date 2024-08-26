@@ -2,7 +2,7 @@ import { useState, FC } from "react";
 import { Link, Box, Flex, Text, Stack } from "@chakra-ui/react";
 
 import Logo from "../logo/Logo";
-import DefaultAppButton from "../buttons/default";
+import DefaultAppButton from "../buttons/DefaultAppButton";
 
 interface HeaderProps {
   [key: string]: any;
