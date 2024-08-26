@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import moment from "moment";
-import React, { FC } from "react";
+import { FC } from "react";
 
 const style: React.CSSProperties = {
   position: "fixed",

@@ -1,7 +1,8 @@
 import { useState, FC } from "react";
-import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
+import { Link, Box, Flex, Text, Stack } from "@chakra-ui/react";
 
 import Logo from "../logo/Logo";
+import DefaultAppButton from "../buttons/default";
 
 interface HeaderProps {
   [key: string]: any;
@@ -103,17 +104,7 @@ const MenuLinks: FC<MenuLinksProps> = ({ isOpen }) => {
         <MenuItem to="#">Features </MenuItem>
         <MenuItem to="#">Pricing </MenuItem>
         <MenuItem to="#" isLast>
-          <Button
-            size="sm"
-            rounded="md"
-            color={["#709477"]}
-            bg={["white", "white", "primary.500", "primary.500"]}
-            _hover={{
-              bg: ["primary.100", "primary.100", "primary.600", "primary.600"],
-            }}
-          >
-            Create Account
-          </Button>
+          <DefaultAppButton callToAction="Create Account" />
         </MenuItem>
       </Stack>
     </Box>

@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardBody,
   CardFooter,
@@ -8,6 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FC } from "react";
+import DefaultAppButton from "../buttons/default";
 
 interface VehiclesCardProps {
   title: string;
@@ -20,7 +20,7 @@ const VehiclesCard: FC<VehiclesCardProps> = ({
   callToAction,
   content,
 }) => (
-  <Card m={"5px"}>
+  <Card m={"5px"} bg={"#e2e9e3"}>
     <CardHeader>
       <Heading size="md">{title}</Heading>
     </CardHeader>
@@ -28,7 +28,7 @@ const VehiclesCard: FC<VehiclesCardProps> = ({
       <Text>{content}</Text>
     </CardBody>
     <CardFooter>
-      <Button>{callToAction}</Button>
+      <DefaultAppButton callToAction={callToAction} />
     </CardFooter>
   </Card>
 );
