@@ -1,7 +1,9 @@
-import React from "react";
 import { Box, Text } from "@chakra-ui/react";
+import { BoxProps } from "@chakra-ui/react";
 
-export default function Logo(props) {
+interface LogoProps extends BoxProps {}
+
+const Logo: React.FC<LogoProps> = (props) => {
   return (
     <Box {...props}>
       <Text fontSize="lg" fontWeight="bold">
@@ -9,4 +11,6 @@ export default function Logo(props) {
       </Text>
     </Box>
   );
-}
+};
+
+export default Logo;

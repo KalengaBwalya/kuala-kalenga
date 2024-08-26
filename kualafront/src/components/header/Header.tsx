@@ -1,12 +1,16 @@
-import React from "react";
+import { useState, FC } from "react";
 import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
 
-import Logo from "./Logo";
+import Logo from "../logo/Logo";
 
-const Header = (props) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+interface HeaderProps {
+  [key: string]: any;
+}
 
-  const toggle = () => setIsOpen(!isOpen);
+const Header: FC<HeaderProps> = (props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggle = (): void => setIsOpen(!isOpen);
 
   return (
     <NavBarContainer {...props}>
@@ -20,7 +24,7 @@ const Header = (props) => {
   );
 };
 
-const CloseIcon = () => (
+const CloseIcon: FC = () => (
   <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
     <title>Close</title>
     <path
@@ -30,7 +34,7 @@ const CloseIcon = () => (
   </svg>
 );
 
-const MenuIcon = () => (
+const MenuIcon: FC = () => (
   <svg
     width="24px"
     viewBox="0 0 20 20"
@@ -42,7 +46,12 @@ const MenuIcon = () => (
   </svg>
 );
 
-const MenuToggle = ({ toggle, isOpen }) => {
+interface MenuToggleProps {
+  toggle: () => void;
+  isOpen: boolean;
+}
+
+const MenuToggle: FC<MenuToggleProps> = ({ toggle, isOpen }) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
       {isOpen ? <CloseIcon /> : <MenuIcon />}
@@ -50,7 +59,19 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
+interface MenuItemProps {
+  children: React.ReactNode;
+  isLast?: boolean;
+  to?: string;
+  [key: string]: any;
+}
+
+const MenuItem: FC<MenuItemProps> = ({
+  children,
+  isLast,
+  to = "/",
+  ...rest
+}) => {
   return (
     <Link href={to}>
       <Text display="block" {...rest}>
@@ -60,7 +81,11 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpen }) => {
+interface MenuLinksProps {
+  isOpen: boolean;
+}
+
+const MenuLinks: FC<MenuLinksProps> = ({ isOpen }) => {
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -95,7 +120,12 @@ const MenuLinks = ({ isOpen }) => {
   );
 };
 
-const NavBarContainer = ({ children, ...props }) => {
+interface NavBarContainerProps {
+  children: React.ReactNode;
+  [key: string]: any;
+}
+
+const NavBarContainer: FC<NavBarContainerProps> = ({ children, ...props }) => {
   return (
     <Flex
       as="nav"
