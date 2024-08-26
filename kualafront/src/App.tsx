@@ -36,6 +36,7 @@ const App: React.FC = () => {
     loadingControl();
     setTimeout(function (): void {
       if (!toast.isActive("success-toast")) {
+        toast.closeAll();
         toast({
           id: "success-toast",
           title: "Vehicle Information Available",
@@ -53,6 +54,7 @@ const App: React.FC = () => {
     loadingControl();
     setTimeout(function (): void {
       if (!toast.isActive("error-toast") && !toast.isActive("success-toast")) {
+        toast.closeAll();
         toast({
           id: "error-toast",
           title: "Vehicle Information Unavailable",
