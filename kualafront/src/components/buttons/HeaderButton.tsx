@@ -9,10 +9,10 @@ const HeaderButton: FC<ButtonProps> = ({ callToAction }) => {
   const toast = useToast();
 
   function toastCTAStatusMsg(callToAction: string): void {
-    if (!toast.isActive(`sign-up-toast`)) {
+    if (!toast.isActive("sign-up-toast")) {
       toast.closeAll();
       toast({
-        id: `sign-up-toast`,
+        id: "sign-up-toast",
         title: `${callToAction} Unavailable`,
         description: "Under construction...",
         status: "warning",
