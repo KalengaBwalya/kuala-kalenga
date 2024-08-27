@@ -24,7 +24,7 @@ const VehicalsCardButton: FC<ButtonProps> = ({
     }
   }
 
-  function toastCTAError(): boolean {
+  function toastCTAError(): void {
     if (
       !toast.isActive(`error-${callToAction.split(" ")[1].toLowerCase()}-toast`)
     ) {
@@ -39,10 +39,9 @@ const VehicalsCardButton: FC<ButtonProps> = ({
         position: "top",
       });
     }
-    return false;
   }
 
-  function toastCTASuccess(): boolean {
+  function toastCTASuccess(): void {
     if (
       !toast.isActive(
         `success-${callToAction.split(" ")[1].toLowerCase()}-toast`,
@@ -59,7 +58,6 @@ const VehicalsCardButton: FC<ButtonProps> = ({
         position: "top",
       });
     }
-    return true;
   }
 
   return (
