@@ -1,6 +1,5 @@
-import { Button } from "@chakra-ui/react";
 import { FC } from "react";
-import { useToast } from "@chakra-ui/react";
+import { useToast, Button } from "@chakra-ui/react";
 
 interface ButtonProps {
   callToAction: string;
