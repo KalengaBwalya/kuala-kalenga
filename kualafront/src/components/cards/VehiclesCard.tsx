@@ -7,7 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import VehicalCardButton from "../buttons/VehicalCardButton";
+import VehicalsCardButton from "../buttons/VehicalsCardButton";
 import { useEffect, useState } from "react";
 
 interface VehiclesCardProps {
@@ -24,25 +24,21 @@ const VehiclesCard: FC<VehiclesCardProps> = ({
   value,
 }) => {
   const [hasValue, setHasValue] = useState<boolean>(false);
-
+  const [cardBg, setCardBg] = useState<string>("");
   const checkValue = () => {
     if (value.length !== 0) {
       setHasValue(true);
+      setCardBg("#e2e9e3");
     } else {
       setHasValue(false);
+      setCardBg("#ffe2dd");
     }
   };
-
-  let cardBg;
-  if (hasValue) {
-    cardBg = "#e2e9e3";
-  } else {
-    cardBg = "#ffe2dd";
-  }
   useEffect(() => {
     checkValue();
     // eslint-disable-next-line
   }, [value]);
+
   return (
     <Card m={"5px"} bg={cardBg}>
       <CardHeader>
@@ -52,7 +48,7 @@ const VehiclesCard: FC<VehiclesCardProps> = ({
         <Text>{content}</Text>
       </CardBody>
       <CardFooter>
-        <VehicalCardButton
+        <VehicalsCardButton
           callToAction={callToAction}
           isDisabled={hasValue}
           title={title}

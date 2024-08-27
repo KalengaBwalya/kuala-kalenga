@@ -19,9 +19,9 @@ const App: React.FC = () => {
   const toast = useToast();
 
   function toastLoading(): void {
-    if (!toast.isActive("info-toast")) {
+    if (!toast.isActive("information-loading-toast")) {
       toast({
-        id: "info-toast",
+        id: "information-loading-toast",
         title: "Vehicle Information Loading...",
         description: "We are still waiting for something",
         status: "info",
@@ -35,10 +35,10 @@ const App: React.FC = () => {
   function toastSuccess(): void {
     toastLoading();
     setTimeout(function (): void {
-      if (!toast.isActive("success-toast")) {
+      if (!toast.isActive("success-information-toast")) {
         toast.closeAll();
         toast({
-          id: "success-toast",
+          id: "success-information-toast",
           title: "Vehicle Information Available",
           description: "You are lucky we received something",
           status: "success",
@@ -53,12 +53,12 @@ const App: React.FC = () => {
   function toastError(): void {
     toastLoading();
     setTimeout(function (): void {
-      if (!toast.isActive("error-toast") && !toast.isActive("success-toast")) {
+      if (!toast.isActive("error-information-toast")) {
         toast.closeAll();
         toast({
-          id: "error-toast",
+          id: "error-information-toast",
           title: "Vehicle Information Unavailable",
-          description: "Oops... we didn't receive anything",
+          description: "Oops... we haven't received anything",
           status: "error",
           duration: 9000,
           isClosable: true,

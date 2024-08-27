@@ -8,7 +8,7 @@ interface ButtonProps {
   title: string;
 }
 
-const VeahicalCardButton: FC<ButtonProps> = ({
+const VeahicalsCardButton: FC<ButtonProps> = ({
   callToAction,
   isDisabled,
   title,
@@ -25,12 +25,14 @@ const VeahicalCardButton: FC<ButtonProps> = ({
   }
 
   function toastCTAError(): boolean {
-    if (!toast.isActive("error-toast") && !toast.isActive("success-toast")) {
+    if (
+      !toast.isActive(`error-${callToAction.split(" ")[1].toLowerCase()}-toast`)
+    ) {
       toast.closeAll();
       toast({
-        id: "error-toast",
+        id: `error-${callToAction.split(" ")[1].toLowerCase()}-toast`,
         title: `${title} Unavailable`,
-        description: `Oops... we didn't receive any ${callToAction.split(" ")[1].toLowerCase()}`,
+        description: `Oops... we haven't received any ${callToAction.split(" ")[1].toLowerCase()}`,
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -41,10 +43,14 @@ const VeahicalCardButton: FC<ButtonProps> = ({
   }
 
   function toastCTASuccess(): boolean {
-    if (!toast.isActive("success-toast")) {
+    if (
+      !toast.isActive(
+        `success-${callToAction.split(" ")[1].toLowerCase()}-toast`,
+      )
+    ) {
       toast.closeAll();
       toast({
-        id: "success-toast",
+        id: `success-${callToAction.split(" ")[1].toLowerCase()}-toast`,
         title: `${title} Available`,
         description: `You are lucky we received ${callToAction.split(" ")[1].toLowerCase()}`,
         status: "success",
@@ -79,4 +85,4 @@ const VeahicalCardButton: FC<ButtonProps> = ({
   );
 };
 
-export default VeahicalCardButton;
+export default VeahicalsCardButton;

@@ -12,6 +12,7 @@ const getVehicleCards = (
   for (const [key, value] of Object.entries(vehicleInformationObj)) {
     vehiclesCards.push(
       <VehiclesCard
+        key={`Vehicle ${key}`.replace(" ", "-").toLowerCase()}
         title={`Vehicle ${key}`}
         callToAction={`Manage ${key}`}
         content={`${value.length} Active ${key}`}
