@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { useToast, Button } from "@chakra-ui/react";
 
-
 interface ButtonProps {
   callToAction: string;
   hasValue: boolean;
