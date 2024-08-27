@@ -8,14 +8,14 @@ interface ButtonProps {
   title: string;
 }
 
-const VeahicalsCardButton: FC<ButtonProps> = ({
+const VehicalsCardButton: FC<ButtonProps> = ({
   callToAction,
   isDisabled,
   title,
 }) => {
   const toast = useToast();
 
-  function toasCTAStatusMsg(isDisabled: boolean): void {
+  function toastCTAStatusMsg(isDisabled: boolean): void {
     toast.closeAll();
     if (isDisabled) {
       toastCTASuccess();
@@ -77,7 +77,7 @@ const VeahicalsCardButton: FC<ButtonProps> = ({
               bg: ["#ffe2dd"],
             }
       }
-      onClick={() => toasCTAStatusMsg(isDisabled)}
+      onClick={() => toastCTAStatusMsg(isDisabled)}
       // isDisabled={isDisabled}
     >
       {callToAction}
@@ -85,4 +85,4 @@ const VeahicalsCardButton: FC<ButtonProps> = ({
   );
 };
 
-export default VeahicalsCardButton;
+export default VehicalsCardButton;
