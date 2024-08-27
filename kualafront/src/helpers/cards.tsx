@@ -15,6 +15,7 @@ const getVehicleCards = (
         title={`Vehicle ${key}`}
         callToAction={`Manage ${key}`}
         content={`${value.length} Active ${key}`}
+        value={value}
       />,
     );
   }

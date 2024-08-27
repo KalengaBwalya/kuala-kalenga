@@ -18,7 +18,7 @@ const App: React.FC = () => {
   const [vehicleVariants, setVehicleVariants] = useState<string[]>([]);
   const toast = useToast();
 
-  function loadingControl(): void {
+  function toastLoading(): void {
     if (!toast.isActive("info-toast")) {
       toast({
         id: "info-toast",
@@ -33,7 +33,7 @@ const App: React.FC = () => {
   }
 
   function toastSuccess(): void {
-    loadingControl();
+    toastLoading();
     setTimeout(function (): void {
       if (!toast.isActive("success-toast")) {
         toast.closeAll();
@@ -51,7 +51,7 @@ const App: React.FC = () => {
   }
 
   function toastError(): void {
-    loadingControl();
+    toastLoading();
     setTimeout(function (): void {
       if (!toast.isActive("error-toast") && !toast.isActive("success-toast")) {
         toast.closeAll();

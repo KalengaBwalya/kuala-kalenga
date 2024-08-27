@@ -5,7 +5,7 @@ interface ButtonProps {
   callToAction: string;
 }
 
-const DefaultAppButton: FC<ButtonProps> = ({ callToAction }) => (
+const HeaderButton: FC<ButtonProps> = ({ callToAction }) => (
   <Button
     size="sm"
     rounded="md"
@@ -19,4 +19,4 @@ const DefaultAppButton: FC<ButtonProps> = ({ callToAction }) => (
   </Button>
 );
 
-export default DefaultAppButton;
+export default HeaderButton;

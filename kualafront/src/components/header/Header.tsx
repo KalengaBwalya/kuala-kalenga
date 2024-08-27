@@ -2,7 +2,7 @@ import { useState, FC } from "react";
 import { Link, Box, Flex, Text, Stack } from "@chakra-ui/react";
 
 import Logo from "../logo/Logo";
-import DefaultAppButton from "../buttons/DefaultAppButton";
+import HeaderButton from "../buttons/HeaderButton";
 
 interface HeaderProps {
   [key: string]: any;
@@ -104,7 +104,7 @@ const MenuLinks: FC<MenuLinksProps> = ({ isOpen }) => {
         <MenuItem to="#">Features </MenuItem>
         <MenuItem to="#">Pricing </MenuItem>
         <MenuItem to="#" isLast>
-          <DefaultAppButton callToAction="Create Account" />
+          <HeaderButton callToAction="Create Account" />
         </MenuItem>
       </Stack>
     </Box>
