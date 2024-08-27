@@ -4,20 +4,20 @@ import { useToast } from "@chakra-ui/react";
 
 interface ButtonProps {
   callToAction: string;
-  isDisabled: boolean;
+  hasValue: boolean;
   title: string;
 }
 
 const VehicalsCardButton: FC<ButtonProps> = ({
   callToAction,
-  isDisabled,
+  hasValue,
   title,
 }) => {
   const toast = useToast();
 
-  function toastCTAStatusMsg(isDisabled: boolean): void {
+  function toastCTAStatusMsg(hasValue: boolean): void {
     toast.closeAll();
-    if (isDisabled) {
+    if (hasValue) {
       toastCTASuccess();
     } else {
       toastCTAError();
@@ -66,10 +66,10 @@ const VehicalsCardButton: FC<ButtonProps> = ({
     <Button
       size="sm"
       rounded="md"
-      color={isDisabled ? ["#709477"] : ["#ff6347"]}
+      color={hasValue ? ["#709477"] : ["#ff6347"]}
       bg={["white"]}
       _hover={
-        isDisabled
+        hasValue
           ? {
               bg: ["#e2e9e3"],
             }
@@ -77,8 +77,7 @@ const VehicalsCardButton: FC<ButtonProps> = ({
               bg: ["#ffe2dd"],
             }
       }
-      onClick={() => toastCTAStatusMsg(isDisabled)}
-      // isDisabled={isDisabled}
+      onClick={() => toastCTAStatusMsg(hasValue)}
     >
       {callToAction}
     </Button>

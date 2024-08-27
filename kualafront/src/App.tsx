@@ -20,6 +20,7 @@ const App: React.FC = () => {
 
   function toastLoading(): void {
     if (!toast.isActive("information-loading-toast")) {
+      toast.closeAll();
       toast({
         id: "information-loading-toast",
         title: "Vehicle Information Loading...",

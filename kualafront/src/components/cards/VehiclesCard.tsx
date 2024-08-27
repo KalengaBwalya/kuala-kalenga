@@ -50,7 +50,7 @@ const VehiclesCard: FC<VehiclesCardProps> = ({
       <CardFooter>
         <VehicalsCardButton
           callToAction={callToAction}
-          isDisabled={hasValue}
+          hasValue={hasValue}
           title={title}
         />
       </CardFooter>
